@@ -29,7 +29,7 @@ export class SecurityTokenStore {
   public set storedValue(value:SecurityToken) {
     this.token = value;
     console.dir(value);
-    localStorage.setItem('token', JSON.stringify(value.toDto()));
+    localStorage.setItem('token', JSON.stringify(value));
   }
 }
 

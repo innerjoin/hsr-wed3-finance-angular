@@ -1,5 +1,5 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
-
+  
 import {SharedModule} from "../shared/shared.module";
 
 import {DashbaordRoutingModule} from "./dashboard-routing.module";
