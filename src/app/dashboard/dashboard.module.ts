@@ -7,7 +7,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 import { LatestTransactionsComponent } from './components/latest-transactions/latest-transactions.component';
 import { AllTransactionsComponent } from './components/all-transactions/all-transactions.component';
-import { IndexComponent } from './components/index/index.component';
 import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { OverviewComponent } from './components/overview/overview.component';
     NewPaymentComponent,
     LatestTransactionsComponent,
     AllTransactionsComponent,
-    IndexComponent,
     OverviewComponent
   ],
   imports: [
