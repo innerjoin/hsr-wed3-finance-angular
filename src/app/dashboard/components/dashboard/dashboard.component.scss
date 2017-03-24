@@ -1,0 +1,18 @@
+@import 'src/styles.scss';
+
+:host {
+    display: flex;
+    flex-direction: row;
+}
+
+app-new-payment {
+    width: 33%;
+}
+
+app-latest-transactions {
+    width: 66%;
+}
+
+ :host > .dashboard-child {
+     margin: 10px!important;
+}

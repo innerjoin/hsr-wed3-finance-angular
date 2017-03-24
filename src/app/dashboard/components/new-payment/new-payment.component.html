@@ -1,17 +1,20 @@
-<h1>New Payment</h1>
+<md-card>
+  <md-card-title>New Payment</md-card-title>
+  <md-card-content>
+    <md-input-container>
+      <input mdInput placeholder="From" type="number" min="1" step="1" />
+    </md-input-container>
 
-<form>
-  <md-input-container>
-    <input mdInput placeholder="From" type="number" min="1" step="1" />
-  </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="To" type="number" min="1" step="1" />
+    </md-input-container>
 
-  <md-input-container>
-    <input mdInput placeholder="To" type="number" min="1" step="1" />
-  </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Amount (CHF)" type="number" min="1" step="any" />
+    </md-input-container>
 
-  <md-input-container>
-    <input mdInput placeholder="Amount (CHF)" type="number" min="1" step="any" />
-  </md-input-container>
-</form>
+    <a md-raised-button color="accent">Pay</a>
+  </md-card-content>
+</md-card>
 
 
