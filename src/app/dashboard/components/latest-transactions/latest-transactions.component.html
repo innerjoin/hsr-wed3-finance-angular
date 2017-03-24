@@ -10,11 +10,11 @@
       <th>Balance [CHF]</th>
   </thead>
   <tbody>
-    <tr>
-      <td>source</td>
-      <td>target...</td>
-      <td>amount...</td>
-      <td>balance...</td>
+    <tr *ngFor="let t of transactions">
+      <td>{{t.from}}</td>
+      <td>{{t.target}}</td>
+      <td>{{t.amount}}</td>
+      <td>{{t.date}}</td>
     </tr>
   </tbody>
 </table>
