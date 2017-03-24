@@ -3,16 +3,22 @@
 :host {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 app-new-payment {
-    width: 33%;
+    width: 32%;
+    min-width: 200px;
+    flex-grow: 1;
 }
 
 app-latest-transactions {
-    width: 66%;
+    width: 60%;
+    min-width: 400px;
+    flex-grow: 2;
 }
 
  :host > .dashboard-child {
-     margin: 10px!important;
+     margin: 2%!important;
 }
