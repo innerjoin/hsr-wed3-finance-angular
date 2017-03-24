@@ -1,11 +1,11 @@
 @import '~@angular/material/core/theming/all-theme';
-@include  mat-core();
+@include mat-core();
 
-$primary: mat-palette($mat-orange, 800);
-$accent:  mat-palette($mat-light-blue, 600, A100, A400);
-$warn:    mat-palette($mat-red, 600);
+$accent: mat-palette($mat-orange, 800);
+$primary: mat-palette($mat-light-blue, 600, A100, A400);
+$warn: mat-palette($mat-red, 600);
 
-$theme:   mat-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
@@ -13,4 +13,8 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 body {
     padding: 0;
     margin: 0;
+}
+
+md-card {
+    margin: 2%!important;
 }
