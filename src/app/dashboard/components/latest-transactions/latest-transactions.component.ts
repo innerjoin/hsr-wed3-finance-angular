@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService} from '../../../core/services/navigation.service';
 
 @Component({
   selector: 'app-latest-transactions',
@@ -13,9 +14,11 @@ export class LatestTransactionsComponent implements OnInit {
     {"from":"1000002","target":"1000001","amount":31,"total":475,"date":{"$$date":1491854400000},"_id":"01X14rx7JKyCDwY5"}
   ];
 
-  constructor() { }
+  constructor(private navigationSvc: NavigationService) { }
 
   ngOnInit() {
   }
-
+  showAll() {
+    this.navigationSvc.goToAllTransactions();
+  }
 }
