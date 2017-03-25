@@ -6,13 +6,17 @@ import {DashbaordRoutingModule} from "./dashboard-routing.module";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 import { LatestTransactionsComponent } from './components/latest-transactions/latest-transactions.component';
+import { AllTransactionsComponent } from './components/all-transactions/all-transactions.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
   declarations: [
     // Declarations (Components / Directives) used from/within the Module
     DashboardComponent,
     NewPaymentComponent,
-    LatestTransactionsComponent
+    LatestTransactionsComponent,
+    AllTransactionsComponent,
+    OverviewComponent
   ],
   imports: [
     // Other Modules to import (imports the exported Components/Directives from the other module)
