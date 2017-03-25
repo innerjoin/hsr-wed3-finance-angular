@@ -1,0 +1,31 @@
+@import 'src/styles.scss';
+
+:host table,
+:host thead,
+:host tbody {
+    width: 100%;
+}
+
+:host table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+:host thead > tr {
+    border-top: 1px solid mat-color($primary);
+    border-bottom: 1px solid mat-color($primary);
+}
+
+:host tr {
+    width: 25%;
+}
+
+:host th,
+:host td {
+    padding: 2px;
+    text-align: center;
+}
+
+:host md-select {
+    margin: 10px 10px 10px 0;
+}
