@@ -23,11 +23,14 @@ export class LogoutComponent implements OnInit {
       (credentials) => {
         if (!credentials) {
           this.navigationSvc.goToHome();
+        }else{
+          this.user = this.autSvc.authenticatedUser;
         }
       });
   }
 
   public doLogout() {
     this.autSvc.logout();
+    this.user = null;
   }
 }
