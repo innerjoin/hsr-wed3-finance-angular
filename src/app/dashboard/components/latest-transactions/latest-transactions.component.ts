@@ -17,6 +17,7 @@ export class LatestTransactionsComponent implements OnInit {
   constructor(private navigationSvc: NavigationService) { }
 
   ngOnInit() {
+    /accounts/transactions?count=3
   }
   showAll() {
     this.navigationSvc.goToAllTransactions();
