@@ -1,5 +1,4 @@
 import {Injectable, EventEmitter} from '@angular/core';
-import {isBlank} from "@angular/core/src/facade/lang";
 
 import {AuthResourceService} from "../resources";
 import {LoginInfo, RegistrationInfo, Credential, Account} from "../models";
@@ -24,7 +23,7 @@ export class AuthService {
   }
 
   public get hasCredentials():boolean {
-    return !isBlank(this.authenticatedUser);
+    return this.authenticatedUser != null;
   }
 
   public register(registerModel:RegistrationInfo):void {
@@ -38,7 +37,7 @@ export class AuthService {
     this.resource.login(loginModel).subscribe(
       (data:Credential) => {
         this.tokenStore.storedValue = data;
-        this.authUser = !isBlank(data)? data.owner : null;
+        this.authUser = data != null ? data.owner : null;
         this.authenticatedUserChange.emit(this.authenticatedUser);
       } );
   }
