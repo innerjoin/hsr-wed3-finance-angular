@@ -10,6 +10,9 @@ export class TransactionTableComponent implements OnInit {
   @Input()
   transactions: any;
 
+  @Input()
+  formatDate: any;
+
   constructor() {
   }
 
