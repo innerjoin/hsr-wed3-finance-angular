@@ -21,6 +21,7 @@
           <th>Target</th>
           <th>Amount [CHF]</th>
           <th>Balance [CHF]</th>
+        </tr>
       </thead>
       <tbody>
         <tr *ngFor="let t of transactions">
@@ -28,7 +29,7 @@
           <td>{{t.from}}</td>
           <td>{{t.target}}</td>
           <td>{{t.amount}}</td>
-          <td>{{t.date}}</td>
+          <td>{{t.total}}</td>
         </tr>
       </tbody>
     </table>
