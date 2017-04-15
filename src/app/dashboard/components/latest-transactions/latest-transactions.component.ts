@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService} from '../../../core/services/navigation.service';
+import { TransactionTableComponent } from '../transaction-table/transaction-table.component';
 
 @Component({
   selector: 'app-latest-transactions',
   templateUrl: './latest-transactions.component.html',
-  styleUrls: ['./latest-transactions.component.scss']
+  styleUrls: ['./latest-transactions.component.scss'],
+  providers: [TransactionTableComponent]
 })
 export class LatestTransactionsComponent implements OnInit {
 
@@ -17,7 +19,7 @@ export class LatestTransactionsComponent implements OnInit {
   constructor(private navigationSvc: NavigationService) { }
 
   ngOnInit() {
-    /accounts/transactions?count=3
+   // /accounts/transactions?count=3
   }
   showAll() {
     this.navigationSvc.goToAllTransactions();

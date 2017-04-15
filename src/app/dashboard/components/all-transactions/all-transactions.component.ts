@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionTableComponent } from '../transaction-table/transaction-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-all-transactions',
   templateUrl: './all-transactions.component.html',
-  styleUrls: ['./all-transactions.component.scss']
+  styleUrls: ['./all-transactions.component.scss'],
+
+  providers: [TransactionTableComponent]
 })
 export class AllTransactionsComponent implements OnInit {
 
