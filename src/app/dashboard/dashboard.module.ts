@@ -1,13 +1,15 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
-  
-import {SharedModule} from "../shared/shared.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {DashbaordRoutingModule} from "./dashboard-routing.module";
+import {SharedModule} from '../shared/shared.module';
+
+import {DashbaordRoutingModule} from './dashboard-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 import { LatestTransactionsComponent } from './components/latest-transactions/latest-transactions.component';
 import { AllTransactionsComponent } from './components/all-transactions/all-transactions.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { TransactionTableComponent } from './components/transaction-table/transaction-table.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { OverviewComponent } from './components/overview/overview.component';
     NewPaymentComponent,
     LatestTransactionsComponent,
     AllTransactionsComponent,
-    OverviewComponent
+    OverviewComponent,
+    TransactionTableComponent
   ],
   imports: [
     // Other Modules to import (imports the exported Components/Directives from the other module)
-    SharedModule, DashbaordRoutingModule
+    SharedModule, DashbaordRoutingModule, BrowserAnimationsModule
   ],
   exports: [
   ],
