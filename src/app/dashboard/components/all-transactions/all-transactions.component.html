@@ -3,12 +3,12 @@
   <div>
     <md-select placeholder="Filter by Year" [(ngModel)]="yearSelected" name="year">
       <md-option *ngFor="let year of years" [value]="year.value">
-        {{year.viewValue}}
+        {{year.text}}
       </md-option>
     </md-select>
     <md-select placeholder="Filter by Month" [(ngModel)]="monthSelected" name="month">
       <md-option *ngFor="let month of months" [value]="month.value">
-        {{month.viewValue}}
+        {{month.text}}
       </md-option>
     </md-select>
   </div>
