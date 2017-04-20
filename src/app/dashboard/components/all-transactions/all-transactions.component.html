@@ -1,12 +1,12 @@
 <md-card>
   <md-card-title>All Transactions</md-card-title>
   <div>
-    <md-select placeholder="Filter by Year" [(ngModel)]="yearSelected" name="year">
+    <md-select placeholder="Filter by Year" [(ngModel)]="yearSelected" (ngModelChange)="inputChanged()" name="year">
       <md-option *ngFor="let year of years" [value]="year.value">
         {{year.text}}
       </md-option>
     </md-select>
-    <md-select placeholder="Filter by Month" [(ngModel)]="monthSelected" name="month">
+    <md-select placeholder="Filter by Month" [(ngModel)]="monthSelected" (ngModelChange)="inputChanged()" name="month">
       <md-option *ngFor="let month of months" [value]="month.value">
         {{month.text}}
       </md-option>

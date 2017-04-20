@@ -1,9 +1,9 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {SharedModule} from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
-import {DashbaordRoutingModule} from './dashboard-routing.module';
+import { DashbaordRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 import { LatestTransactionsComponent } from './components/latest-transactions/latest-transactions.component';
@@ -11,9 +11,10 @@ import { AllTransactionsComponent } from './components/all-transactions/all-tran
 import { OverviewComponent } from './components/overview/overview.component';
 import { TransactionTableComponent } from './components/transaction-table/transaction-table.component';
 
+import { TransactionService} from './services/transaction.service';
+import { TransactionResource } from './resources/transaction.resource';
 @NgModule({
   declarations: [
-    // Declarations (Components / Directives) used from/within the Module
     DashboardComponent,
     NewPaymentComponent,
     LatestTransactionsComponent,
@@ -28,15 +29,14 @@ import { TransactionTableComponent } from './components/transaction-table/transa
   exports: [
   ],
   providers: [
-    // DI Providers (Services, Tokens, Factories...), may be instantiated multiple times
+    TransactionService, TransactionResource
   ]
 })
 export class DashboardModule {
-  static forRoot(config?:{}) : ModuleWithProviders {
+  static forRoot(config?: {}): ModuleWithProviders {
     return {
       ngModule: DashboardModule,
       providers: [ ]
     };
   }
-
 }
