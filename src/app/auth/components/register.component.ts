@@ -7,6 +7,7 @@ import {NavigationService} from "../../core/services/navigation.service";
 import {AuthService} from "../services";
 import {RegistrationInfo} from "../models";
 
+
 @Component({
   selector: 'wed-register',
   templateUrl: 'register.component.html',
@@ -44,5 +45,8 @@ export class RegisterComponent implements OnInit {
         f.value.lastname));
     }
     return false;
+  }
+  public goToLogin() {
+    this.navigationSvc.goToHome();
   }
 }
