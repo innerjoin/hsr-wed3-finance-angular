@@ -12,6 +12,10 @@ export class NavigationService {
     this.goToUrl('/');
   }
 
+  public goToRegister(): void {
+    this.goToUrl('/welcome/register');
+  }
+
   public goToDashboard(): void {
     this.goToUrl('/dashboard');
   }
