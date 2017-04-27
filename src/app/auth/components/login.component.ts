@@ -47,4 +47,7 @@ export class LoginComponent implements OnInit {
     }
     return false;
   }
+  public goToRegister() {
+    this.navigationSvc.goToRegister();
+  }
 }

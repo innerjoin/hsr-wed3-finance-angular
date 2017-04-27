@@ -1,7 +1,6 @@
 <md-card>
   <md-card-title>Login</md-card-title>
   <md-card-content>
-    <!-- TODO: Add ng2 specific directives/validation settings and add styling -->
     <form (ngSubmit)="doLogin(loginForm)" #loginForm="ngForm">
       <div>
         <md-input-container>
@@ -19,3 +18,4 @@
     </form>
   </md-card-content>
 </md-card>
+<a color="accent" (click)="goToRegister()">Register</a>
