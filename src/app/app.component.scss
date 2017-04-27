@@ -3,3 +3,27 @@
   // Every toolbar row uses a flexbox row layout.
   flex: 1 1 auto;
 }
+
+nav {
+  margin: 0 20px 0 40px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  padding: 0 10px 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+nav li:not(:last-child):after {
+  content: '|';
+}
