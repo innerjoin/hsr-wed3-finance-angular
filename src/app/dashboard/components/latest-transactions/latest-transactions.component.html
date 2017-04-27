@@ -1,23 +1,7 @@
 <md-card>
   <md-card-title>Latest Transactions</md-card-title>
   <md-card-content>
-    <table>
-      <thead>
-        <tr>
-          <th>Source</th>
-          <th>Target</th>
-          <th>Amount [CHF]</th>
-          <th>Balance [CHF]</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let t of transactions">
-          <td>{{t.from}}</td>
-          <td>{{t.target}}</td>
-          <td>{{t.amount}}</td>
-          <td>{{t.date}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <app-transaction-table [formatDate]="formatDate" [transactions]="transactions"> </app-transaction-table>
     <a md-raised-button color="accent" (click)="showAll()">All Transactions</a>
   </md-card-content>
 </md-card>

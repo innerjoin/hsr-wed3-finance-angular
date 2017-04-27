@@ -1,36 +1,18 @@
 <md-card>
   <md-card-title>All Transactions</md-card-title>
   <div>
-    <md-select placeholder="Filter by Year" [(ngModel)]="yearSelected" name="year">
+    <md-select placeholder="Filter by Year" [(ngModel)]="yearSelected" (ngModelChange)="inputChanged()" name="year">
       <md-option *ngFor="let year of years" [value]="year.value">
-        {{year.viewValue}}
+        {{year.text}}
       </md-option>
     </md-select>
-    <md-select placeholder="Filter by Month" [(ngModel)]="monthSelected" name="month">
+    <md-select placeholder="Filter by Month" [(ngModel)]="monthSelected" (ngModelChange)="inputChanged()" name="month">
       <md-option *ngFor="let month of months" [value]="month.value">
-        {{month.viewValue}}
+        {{month.text}}
       </md-option>
     </md-select>
   </div>
   <md-card-content>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Source</th>
-          <th>Target</th>
-          <th>Amount [CHF]</th>
-          <th>Balance [CHF]</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let t of transactions">
-          <td>{{t.date}}</td>
-          <td>{{t.from}}</td>
-          <td>{{t.target}}</td>
-          <td>{{t.amount}}</td>
-          <td>{{t.date}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <app-transaction-table [formatDate]="formatDate" [transactions]="transactions"> </app-transaction-table>
   </md-card-content>
 </md-card>
