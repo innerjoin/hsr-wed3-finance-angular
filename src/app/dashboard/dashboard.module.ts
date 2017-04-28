@@ -34,7 +34,11 @@ import { OnlyLoggedInGuard } from '../auth/guards/only-logged-in.guard';
   exports: [
   ],
   providers: [
-    TransactionService, TransactionResource, AccountService, AccountResource
+    OnlyLoggedInGuard,
+    TransactionService,
+    TransactionResource,
+    AccountService,
+    AccountResource
   ]
 })
 export class DashboardModule {
