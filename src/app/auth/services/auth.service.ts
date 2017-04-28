@@ -26,10 +26,12 @@ export class AuthService {
     return this.authenticatedUser != null;
   }
 
-  public register(registerModel:RegistrationInfo):void {
-    this.resource.register(registerModel).subscribe(
+  public register(registerModel:RegistrationInfo, errorHandler:(error:any) => void):void {
+    this.resource.register(registerModel, errorHandler).subscribe(
       (data:Account) => {
-        this.login(registerModel);
+        if (data !==null){
+          this.login(registerModel);
+        }
       } );
   }
 

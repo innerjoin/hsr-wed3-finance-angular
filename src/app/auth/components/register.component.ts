@@ -37,12 +37,17 @@ export class RegisterComponent implements OnInit {
 
   public doRegister(f: NgForm):boolean {
     if (f.valid) {
+      var errorHandler = (error:any):void => {
+        alert(error);
+      }
       this.isProcessing = true;
       this.autSvc.register(new RegistrationInfo(
         f.value.login,
         f.value.password,
         f.value.firstname,
-        f.value.lastname));
+        f.value.lastname),
+        errorHandler
+      );
     }
     return false;
   }

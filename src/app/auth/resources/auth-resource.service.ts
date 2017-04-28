@@ -12,7 +12,7 @@ export class AuthResourceService extends ResourceBase {
     super(http);
   }
 
-  public register(model:RegistrationInfo):Observable<Account> {
+  public register(model:RegistrationInfo, errorHandler:(error:any) => void):Observable<Account> {
     return this.post('/auth/register', model.toDto())
       .map((response: Response) => {
         let result = response.json();
@@ -22,6 +22,7 @@ export class AuthResourceService extends ResourceBase {
         return null;
       })
       .catch((error:any) => {
+        errorHandler("Error on Server Side");
         return Observable.of<Account>(null);
       });
   }
