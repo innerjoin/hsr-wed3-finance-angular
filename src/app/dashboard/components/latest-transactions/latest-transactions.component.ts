@@ -24,9 +24,12 @@ export class LatestTransactionsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.transSvc.lastTransactionChange.subscribe((t) => { 
-      this.transactions = t.map((x) => x.toDto()); 
+    this.transSvc.lastTransactionChange.subscribe((t) => {
+      this.transactions = t.map((x) => x.toDto());
     });
+    this.transSvc.reloadLatestTransactions.subscribe((t) => {
+      this.updateTransactionData();
+    })
     this.updateTransactionData();
   }
 
