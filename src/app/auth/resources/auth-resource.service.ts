@@ -22,7 +22,17 @@ export class AuthResourceService extends ResourceBase {
         return null;
       })
       .catch((error:any) => {
-        errorHandler("Error on Server Side");
+        console.dir(error);
+        var msg = "Error on Server Side";
+        if(error._body !== undefined){
+          let result = error.json();
+          if(result.data.errorType == "uniqueViolated"){
+            msg += ": "+result.data.key+" has to be unique";
+          }else{
+            msg += ": "+result.data.key+" "+result.data.errorType;
+          }
+        }
+        errorHandler(msg);
         return Observable.of<Account>(null);
       });
   }
