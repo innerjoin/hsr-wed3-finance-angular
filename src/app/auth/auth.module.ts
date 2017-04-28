@@ -5,14 +5,16 @@ import {RequestOptions} from '@angular/http';
 import {AuthService, SecurityTokenStore} from './services';
 import {AuthResourceService, AuthRequestOptions} from './resources';
 
-import {LoginComponent, LogoutComponent, RegisterComponent} from './components';
-import {SharedModule} from '../shared/shared.module';
+
+import {LoginComponent, LogoutComponent,
+  RegisterComponent} from "./components";
+import {SharedModule} from "../shared/shared.module";
+import { EqualValidatorDirective } from "./equal-validator.directive";
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    LogoutComponent,
-    RegisterComponent
+    // TODO: Add declarations here, if additional components are placed within the Auth module
+    LoginComponent, LogoutComponent, RegisterComponent, EqualValidatorDirective
   ],
   imports: [
     SharedModule
