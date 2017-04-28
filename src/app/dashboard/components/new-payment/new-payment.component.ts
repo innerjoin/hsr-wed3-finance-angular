@@ -5,7 +5,6 @@ import {AccountModel} from '../../models/account.model';
 import {TransactionModel} from '../../models/transaction.model';
 import {TransactionResource} from '../../resources/transaction.resource';
 import {AccountResource} from '../../resources/account.resource';
-import {noUndefined} from '@angular/compiler/src/util';
 
 
 @Component({
