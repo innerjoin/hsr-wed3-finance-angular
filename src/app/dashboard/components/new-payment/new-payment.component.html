@@ -9,16 +9,16 @@
             <md-input-container>
                 <input mdInput placeholder="To" type="text" #name="ngModel" ngModel autocomplete="off" name="target" #target [(ngModel)]="targetAccountNr" (keyup)="onHandleTarget(target.value)" ng-model="target"/>
             </md-input-container>
-            {{ messages.receiver }}
+            <span class="hint">{{ messages.receiver }}</span>
 
             <md-input-container>
                 <input mdInput placeholder="Amount (CHF)" #name="ngModel" autocomplete="off" ngModel name="amount" [(ngModel)]="transferAmount" ng-pattern="/^\d+$/" ng-model=""/>
             </md-input-container>
-            {{ messages.amount }}
+            <span class="hint">{{ messages.amount }}</span>
             <br/><br/>
             <div>
                 <button md-raised-button color="accent">Pay</button>
-                {{ messages.payment }}
+                <span class="hint">{{ messages.payment }}</span>
             </div>
         </form>
     </md-card-content>
