@@ -26,15 +26,17 @@ export class AuthService {
     return this.authenticatedUser != null;
   }
 
+  public register(registerModel:RegistrationInfo, errorHandler:(error:any) => void):void {
+    this.resource.register(registerModel, errorHandler).subscribe(
+      (data:Account) => {
+        if (data !==null){
+          this.login(registerModel);
+        }
+      } );
+  }
+  
   public hasToken(): boolean {
     return this.tokenStore.storedValue != null;
-  }
-
-  public register(registerModel: RegistrationInfo): void {
-    this.resource.register(registerModel).subscribe(
-      (data: Account) => {
-        this.login(registerModel);
-      } );
   }
 
   public login(loginModel: LoginInfo):void {

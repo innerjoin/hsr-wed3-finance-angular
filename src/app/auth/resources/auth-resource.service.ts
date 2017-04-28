@@ -12,7 +12,7 @@ export class AuthResourceService extends ResourceBase {
     super(http);
   }
 
-  public register(model:RegistrationInfo):Observable<Account> {
+  public register(model:RegistrationInfo, errorHandler:(error:any) => void):Observable<Account> {
     return this.post('/auth/register', model.toDto())
       .map((response: Response) => {
         let result = response.json();
@@ -22,6 +22,17 @@ export class AuthResourceService extends ResourceBase {
         return null;
       })
       .catch((error:any) => {
+        console.dir(error);
+        var msg = "Error on Server Side";
+        if(error._body !== undefined){
+          let result = error.json();
+          if(result.data.errorType == "uniqueViolated"){
+            msg += ": "+result.data.key+" has to be unique";
+          }else{
+            msg += ": "+result.data.key+" "+result.data.errorType;
+          }
+        }
+        errorHandler(msg);
         return Observable.of<Account>(null);
       });
   }
