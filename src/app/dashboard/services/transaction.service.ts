@@ -24,7 +24,6 @@ export class TransactionService {
 
   public updateLatestTransactions(queryOpts: TransactionQueryOptions) {
     this.tResouce.getTransactions(queryOpts).subscribe((data: TransactionModel[]) => {
-      console.log("newest rans:", data);
       this.lastTransactions = data || null;
       this.lastTransactionChange.emit(this.lastTransactions);
     });

@@ -13,6 +13,8 @@ import { TransactionTableComponent } from './components/transaction-table/transa
 
 import { TransactionService} from './services/transaction.service';
 import { TransactionResource } from './resources/transaction.resource';
+import { OnlyLoggedInGuard } from '../auth/guards/only-logged-in.guard';
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -23,13 +25,16 @@ import { TransactionResource } from './resources/transaction.resource';
     TransactionTableComponent
   ],
   imports: [
-    // Other Modules to import (imports the exported Components/Directives from the other module)
-    SharedModule, DashbaordRoutingModule, BrowserAnimationsModule
+    SharedModule,
+    DashbaordRoutingModule,
+    BrowserAnimationsModule
   ],
   exports: [
   ],
   providers: [
-    TransactionService, TransactionResource
+    OnlyLoggedInGuard,
+    TransactionService,
+    TransactionResource
   ]
 })
 export class DashboardModule {
