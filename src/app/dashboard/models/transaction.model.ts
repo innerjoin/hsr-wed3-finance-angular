@@ -9,7 +9,6 @@ export class TransactionModel {
   date: Date;
 
   public static fromDto(data: any): TransactionModel {
-    console.log(data);
     return new TransactionModel(data.from, data.target, data.amount, data.total, data.date);
   }
 

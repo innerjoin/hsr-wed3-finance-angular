@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Router, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AllTransactionsComponent } from './components/all-transactions/all-transactions.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { OnlyLoggedInGuard } from '../auth/guards/only-logged-in.guard';
 
 const appRoutes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent, // TODO: Add initial router outlet dashboard component...
+    component: DashboardComponent,
     children: [
-      // TODO: Add routing path for dashboard here...
-      { path: '', component: OverviewComponent },
-      { path: 'transactions', component: AllTransactionsComponent }
-    ]
+      { path: '', component: OverviewComponent},
+      { path: 'transactions', component: AllTransactionsComponent}
+    ],
+    canActivate: [OnlyLoggedInGuard],
   }
 ];
 

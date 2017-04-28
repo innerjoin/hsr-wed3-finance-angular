@@ -18,7 +18,6 @@ export class TransactionResource extends ResourceBase {
     return this.get(`/accounts/transactions?fromDate=${req.fromDate}&toDate=${req.toDate}&count=${req.count}&skip=${req.skip}`)
       .map((response: Response) => {
         const result = response.json().result;
-        console.log("response:", response);
         if (!result) {
             return null;
         }
