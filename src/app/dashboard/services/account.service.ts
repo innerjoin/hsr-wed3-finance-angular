@@ -23,11 +23,14 @@ export class AccountService {
 
     public checkAccountNr(accountNr) {
         if (accountNr.length > 2) {
-            this.targetAccountMessageChange.emit('Unknown account number specified');
             this.tResource.checkAccountNr(accountNr).subscribe((data) => {
                 this.targetAccount = data || null;
-                this.targetAccountChange.emit(this.targetAccount);
-                this.targetAccountMessageChange.emit(this.targetAccount.owner.firstname + ' ' + this.targetAccount.owner.lastname);
+                if (this.targetAccount === null){
+                  this.targetAccountMessageChange.emit('Unknown account number specified');
+                } else {
+                  this.targetAccountChange.emit(this.targetAccount);
+                  this.targetAccountMessageChange.emit(this.targetAccount.owner.firstname + ' ' + this.targetAccount.owner.lastname);
+                }
             });
         } else {
             this.targetAccountMessageChange.emit('Please specify the target account number.');
