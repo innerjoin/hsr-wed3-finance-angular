@@ -13,6 +13,8 @@ import { TransactionTableComponent } from './components/transaction-table/transa
 
 import { TransactionService} from './services/transaction.service';
 import { TransactionResource } from './resources/transaction.resource';
+import {AccountService} from "./services/account.service";
+import {AccountResource} from "./resources/account.resource";
 import { OnlyLoggedInGuard } from '../auth/guards/only-logged-in.guard';
 
 @NgModule({
@@ -32,9 +34,7 @@ import { OnlyLoggedInGuard } from '../auth/guards/only-logged-in.guard';
   exports: [
   ],
   providers: [
-    OnlyLoggedInGuard,
-    TransactionService,
-    TransactionResource
+    TransactionService, TransactionResource, AccountService, AccountResource
   ]
 })
 export class DashboardModule {
