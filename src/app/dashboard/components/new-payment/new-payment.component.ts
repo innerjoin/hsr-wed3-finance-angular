@@ -46,9 +46,11 @@ export class NewPaymentComponent implements OnInit {
         });
         this.transSvc.transactionMessageChange.subscribe((t) => {
             this.messages.payment = t;
-            this.initializeMessages();
-            this.initializeForm();
         });
+        this.transSvc.transactionSuccessful.subscribe((t) => {
+          this.initializeMessages();
+          this.initializeForm();
+        })
         this.updateAccountData();
         this.initializeMessages();
     }

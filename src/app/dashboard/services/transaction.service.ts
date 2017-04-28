@@ -10,7 +10,8 @@ export class TransactionService {
   public filteredTransactionChange: EventEmitter<TransactionModel[]> = new EventEmitter<TransactionModel[]>();
   public transferChangeEvent: EventEmitter<TransactionModel> = new EventEmitter<TransactionModel>();
   public transactionMessageChange: EventEmitter<string> = new EventEmitter();
-  public reloadLatestTransactions: EventEmitter<boolean> = new EventEmitter;
+  public reloadLatestTransactions: EventEmitter<boolean> = new EventEmitter();
+  public transactionSuccessful: EventEmitter<boolean> = new EventEmitter();
 
   private lastTransactions: TransactionModel[] = [];
   private filteredTransactions: TransactionModel[] = [];
@@ -37,6 +38,7 @@ export class TransactionService {
         this.transferChangeEvent.emit(res);
         this.transactionMessageChange.emit('Transaction successful');
         this.reloadLatestTransactions.emit();
+        this.transactionSuccessful.emit();
       } else {
         this.transactionMessageChange.emit('Transaction not successful');
       }
