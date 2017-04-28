@@ -33,9 +33,13 @@ export class TransactionService {
 
   public createTransfer(trans: TransactionModel) {
     this.tResouce.executeTransaction(trans).subscribe((res: TransactionModel) => {
-      this.transferChangeEvent.emit(res);
-      this.transactionMessageChange.emit('Transaction successful');
-      this.reloadLatestTransactions.emit();
+      if (res !== null) {
+        this.transferChangeEvent.emit(res);
+        this.transactionMessageChange.emit('Transaction successful');
+        this.reloadLatestTransactions.emit();
+      } else {
+        this.transactionMessageChange.emit('Transaction not successful');
+      }
     });
   }
 }
