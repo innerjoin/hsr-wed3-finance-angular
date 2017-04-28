@@ -6,16 +6,18 @@
         <md-input-container>
           <input mdInput placeholder="Username" pattern=".{3,}" placeholder="User" class="form-control" required type="text" #name="ngModel" ngModel name="login" />
         </md-input-container>
-          <div>Please specify your login, at least three characters.</div>
+          <div class="hint">Please specify your login, at least three characters.</div>
       </div>
       <div>
         <md-input-container>
           <input mdInput placeholder="Password" pattern=".{3,}" placeholder="Password" type="password" name="password" ngModel />
         </md-input-container>
-          <div>Please specify your login, at least three characters.</div>
+          <div class="hint">Please specify your login, at least three characters.</div>
       </div>
       <button md-raised-button color="accent">Login</button>
     </form>
   </md-card-content>
+  <br />
+  Not yet registered? Switch to <a class="navLink" (click)="goToRegister()">Register</a>
 </md-card>
-<a color="accent" (click)="goToRegister()">Register</a>
+
